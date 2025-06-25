@@ -9,15 +9,12 @@ import {
   FaAws,
   FaYoutube,
   FaPython,
-  FaRobot,
   FaCloud,
 } from 'react-icons/fa';
 import {
   SiExpress,
   SiTensorflow,
   SiPytorch,
-  SiKeras,
-  SiScikitlearn,
   SiOpenai,
   SiFlask,
   SiNumpy,
