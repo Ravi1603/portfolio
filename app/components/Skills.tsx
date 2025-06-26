@@ -1,7 +1,6 @@
 import {
   FaPython, FaDatabase, FaLinux, FaProjectDiagram, FaWarehouse,
-  FaHtml5, FaCss3Alt, FaJsSquare, FaNpm, FaReact,
-  FaTable, FaChartBar, FaGithub, FaDocker
+  FaHtml5, FaCss3Alt, FaJsSquare, FaNpm, FaReact, FaChartBar, FaGithub, FaDocker
 } from 'react-icons/fa';
 import {
   SiApachespark, SiApacheairflow, SiApachekafka, SiPostgresql,
