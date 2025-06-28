@@ -3,6 +3,14 @@
 import React from 'react';
 import { FaCertificate, FaTrophy, FaFileAlt, FaBook } from 'react-icons/fa';
 
+type AchievementItem = {
+  title: string;
+  issuer: string;
+  date: string;
+  icon: React.ReactNode;
+  link?: string;
+};
+
 const achievements = {
   certifications: [
     {
@@ -54,7 +62,11 @@ const achievements = {
   ],
 };
 
-const Section = ({ title, items }: { title: string; items: any[] }) => (
+
+
+
+
+const Section = ({ title, items }: { title: string; items: AchievementItem[] }) => (
   <section className="mb-12">
     <h3 className="text-3xl font-bold text-white mb-6 border-b border-gray-600 pb-2">{title}</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
