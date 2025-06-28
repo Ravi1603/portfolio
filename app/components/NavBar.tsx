@@ -1,7 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
 
 const navItems = [
   "Home",
@@ -25,28 +23,17 @@ export default function Navbar() {
   };
 
   return (
-    <div className="relative bg-[#2a323d]/70 backdrop-blur-md rounded-full px-4 py-3 flex justify-center gap-6 shadow-lg">
+    <div className="relative bg-[#2a323d]/70 backdrop-blur-md rounded-full px-4 py-3 flex justify-center gap-4 shadow-lg">
       {navItems.map((item) => (
         <button
           key={item}
           onClick={() => handleNavClick(item)}
-          className="relative px-5 py-2 rounded-full text-s font-large cursor-pointer"
+          className={
+            "relative px-4 py-2 rounded-full text-xs font-medium cursor-pointer transition-colors " +
+            (active === item ? "bg-white text-black shadow" : "text-white")
+          }
         >
-          {active === item && (
-            <motion.div
-              layoutId="nav-pill"
-              className="absolute inset-0 bg-white rounded-full shadow"
-              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-            />
-          )}
-          <span
-            className={clsx(
-              "relative z-10",
-              active === item ? "text-black" : "text-white"
-            )}
-          >
-            {item}
-          </span>
+          {item}
         </button>
       ))}
     </div>

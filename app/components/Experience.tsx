@@ -1,8 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-
 type ExperienceItem = {
   title: string;
   company: string;
@@ -39,22 +36,15 @@ export default function Experience() {
   return (
     <div className="relative px-4 sm:px-10 py-16 bg-[#0b0f19] text-white">
       <h2 className="text-4xl font-bold text-center mb-16">My Experience</h2>
-
       <div className="relative max-w-6xl mx-auto">
         {/* Vertical line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-600"></div>
-
         <div className="flex flex-col gap-20">
           {experiences.map((exp, index) => {
             const isLeft = index % 2 === 0;
-
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
                 className={`relative flex flex-col sm:flex-row items-center ${
                   isLeft ? 'sm:justify-start' : 'sm:justify-end'
                 }`}
@@ -62,16 +52,16 @@ export default function Experience() {
                 {/* Timeline dot with white outline */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2 w-20 h-20 rounded-full bg-white flex items-center justify-center border-[6px] border-gray-900 z-10 shadow-md">
                   <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                    <Image
+                    <img
                       src={exp.logo}
                       alt={`${exp.company} logo`}
-                      width={40}
-                      height={40}
-                      className="object-contain"
+                      width={56}
+                      height={56}
+                      className="object-contain w-14 h-14"
+                      style={{ width: 56, height: 56 }}
                     />
                   </div>
                 </div>
-
                 {/* Date - on opposite side of card */}
                 <div
                   className={`absolute top-1/2 transform -translate-y-1/2 text-sm text-gray-400 w-40 ${
@@ -80,7 +70,6 @@ export default function Experience() {
                 >
                   {exp.date}
                 </div>
-
                 {/* Card */}
                 <div
                   className={`bg-gray-800 p-6 rounded-xl shadow-md w-full sm:w-[48%] relative ${
@@ -95,7 +84,6 @@ export default function Experience() {
                         : '-left-3 border-r-gray-800'
                     } w-0 h-0 border-y-8 border-y-transparent border-l-8 border-r-8`}
                   ></div>
-
                   <h3 className="text-md font-bold mb-1">{exp.title}</h3>
                   <p className="text-sm font-semibold mb-3">{exp.company}</p>
                   <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
@@ -106,7 +94,7 @@ export default function Experience() {
                     ))}
                   </ul>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
