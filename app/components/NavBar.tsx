@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="relative bg-[#2a323d] rounded-full px-4 py-3 flex justify-center gap-6 shadow-lg">
+    <div className="relative bg-[#2a323d]/70 backdrop-blur-md rounded-full px-4 py-3 flex justify-center gap-6 shadow-lg">
       {navItems.map((item) => (
         <button
           key={item}

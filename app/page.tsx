@@ -11,6 +11,7 @@ import Projects from "./components/Projects";
 import Achievements from "./components/Achievements";
 import ParticlesBackground from "./components/ParticlesBackground";
 import ContactCard from "./components/ContactCard";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -64,6 +65,14 @@ export default function Home() {
         <section id="Contact" className="scroll-mt-28 w-full max-w-4xl mx-auto text-white text-2xl">
           <ContactCard />
         </section>
+
+        {/* Add bottom space before footer */}
+        <div className="h-24" />
+      </div>
+
+      {/* Footer above background layer */}
+      <div className="relative z-20 w-full">
+        <Footer />
       </div>
     </div>
   );
